@@ -8,6 +8,21 @@
 
 /*5.1 Brug javascript til at gemme teksterne væk i artiklerne <p>-tags. Indsæt istedet link med "Læs mere..." */
 
+const articleElement = document.querySelectorAll("article");
+
+for (let i = 0; i < articleElement.length; i++) {
+  const button = document.createElement("button");
+  button.innerText = "Læs mere";
+  articleElement[i].append(button);
+  button.classList.add("toggle");
+}
+
+const pTags = document.querySelectorAll("article p");
+
+pTags.forEach((ptag) => {
+  ptag.style.display = "none";
+});
+
 /*5.2. Sørg for at når man trykker på "Læs mere..." vises den oprindelige tekst ovenover "Læs mere..."  */
 
 /*5.3. Sørg for at "Læs mere..." bliver lavet om til "Læs mindre..." */
